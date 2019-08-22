@@ -1,3 +1,13 @@
 // Color
 $color-black: #000;
 $color-dark-grey: #4a4a44;
+$color-sub: grey;
+$color-white: white;
+
+
+// Mixin
+@mixin shrinkLabel {
+    top: -1.4rem;
+    font-size: 1.2rem;
+    color: $color-black;
+}
