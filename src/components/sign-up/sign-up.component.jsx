@@ -4,7 +4,7 @@ import React from 'react';
 import FormInput from '../form/form-input.component';
 import CustomButton from '../button/custom-button.component';
 import {auth, createUserProfileDocument} from '../../firebase/firebase';
-import { async } from 'q';
+
 
 class SignUp extends React.Component {
     constructor(props){
@@ -20,8 +20,8 @@ class SignUp extends React.Component {
 
 
 
-    handleSubmit= async event=>{
-        event.preventDefualt();
+    handleSubmit = async event=>{
+        event.preventDefault();
 
         const {displayName, email, password, confirmPassword} = this.state;
 
@@ -34,7 +34,7 @@ class SignUp extends React.Component {
             const {user} = await auth.createUserWithEmailAndPassword(email, password)
 
            await createUserProfileDocument(user, {displayName});
-
+          
            this.setState({
             displayName: '',
             email:'',
@@ -58,7 +58,7 @@ class SignUp extends React.Component {
     render(){
         const {displayName, email, password, confirmPassword} = this.state;
         return(
-            <div className=''>
+            <div className='sign-up'>
                 <h2 className='title'>I do not have a account</h2>
                 <span>Sign up with your email and password</span>
                 <form className='sign-up-form' onSubmit={this.handleSubmit}>
@@ -105,4 +105,4 @@ class SignUp extends React.Component {
     }
 }
 
-export default  SignUp
+export default  SignUp;

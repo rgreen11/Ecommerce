@@ -30,7 +30,6 @@ componentDidMount(){
             id:snapShot.id,
             ...snapShot.data()
           } 
-
         })
       })
 
