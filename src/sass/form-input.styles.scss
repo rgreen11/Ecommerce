@@ -1,6 +1,6 @@
 .group{
     position: relative;
-    margin: 4.5rem 0;
+    margin: 3rem 0;
 
     .form-input{
         background: none;
@@ -12,8 +12,8 @@
         width: 100%;
         border: none;
         border-radius: 0%;
-        border-bottom: .1rem solid $color-dark-grey;
-        margin: 2.5rem 0;
+        border-bottom: .01rem solid $color-dark-grey;
+        margin: 2rem 0;
 
         &:focus{
             outline: none;

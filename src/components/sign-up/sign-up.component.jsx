@@ -1,6 +1,4 @@
 import React from 'react';
-
-
 import FormInput from '../form/form-input.component';
 import CustomButton from '../button/custom-button.component';
 import {auth, createUserProfileDocument} from '../../firebase/firebase';
@@ -9,7 +7,6 @@ import {auth, createUserProfileDocument} from '../../firebase/firebase';
 class SignUp extends React.Component {
     constructor(props){
         super(props);
-
         this.state={
             displayName: '',
             email:'',
@@ -18,9 +15,7 @@ class SignUp extends React.Component {
         }
     }
 
-
-
-    handleSubmit = async event=>{
+    handleSubmit = async event => {
         event.preventDefault();
 
         const {displayName, email, password, confirmPassword} = this.state;
@@ -34,7 +29,7 @@ class SignUp extends React.Component {
             const {user} = await auth.createUserWithEmailAndPassword(email, password)
 
            await createUserProfileDocument(user, {displayName});
-          
+          console.log(user)
            this.setState({
             displayName: '',
             email:'',
@@ -47,9 +42,8 @@ class SignUp extends React.Component {
     };
 
 
-    handleChange=(event)=>{
-        const {name, value} = event.target
-
+    handleChange = (event) => {
+        const {name, value} = event.target;
         this.setState({[name]: value});
     }
 
@@ -61,8 +55,8 @@ class SignUp extends React.Component {
             <div className='sign-up'>
                 <h2 className='title'>I do not have a account</h2>
                 <span>Sign up with your email and password</span>
-                <form className='sign-up-form' onSubmit={this.handleSubmit}>
 
+                <form className='sign-up-form' onSubmit={this.handleSubmit}>
                 <FormInput 
                 type='text' 
                 name='displayName'
@@ -98,7 +92,9 @@ class SignUp extends React.Component {
                 label = 'Confirm Password'
                 required
                 />
+
                 <CustomButton type='submit'> Sign up</CustomButton>
+
                 </form>
             </div>
         )

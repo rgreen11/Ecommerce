@@ -47,7 +47,7 @@ componentWillUnmount(){
 }
 
   render(){
-    console.log(this.state.currentUser)
+
     return (
       <div className="App">
         <Home currentUser={this.state.currentUser}/>
