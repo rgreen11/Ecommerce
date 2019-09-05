@@ -2,6 +2,7 @@ import React from 'react';
 
 
 const FormInput = ({handleChange, label, ...otherProps}) =>{
+    console.log(label)
     return (
         <div className='group'>
             <input className='form-input' onChange={handleChange} {...otherProps} />
@@ -13,6 +14,7 @@ const FormInput = ({handleChange, label, ...otherProps}) =>{
                 : 
                 null
             }
+
         </div>
     )
 }

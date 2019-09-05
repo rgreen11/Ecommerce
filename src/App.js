@@ -14,10 +14,10 @@ constructor(props){
   super(props);
   this.state = {
     currentUser: null
-  }
+  };
 }
 
-unsubcribeFromAuth = null
+unsubcribeFromAuth = null;
 
 componentDidMount(){
    this.unsubcribeFromAuth = auth.onAuthStateChanged( async userAuth => {
@@ -32,12 +32,9 @@ componentDidMount(){
           } 
         });
       })
-
      } else {
        this.setState({currentUser: userAuth})
      }
-    
-    
   })
 }
 
