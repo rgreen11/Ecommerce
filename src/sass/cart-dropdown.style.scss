@@ -10,13 +10,12 @@
     top: 8rem;
     right: 0;
     z-index: 5;
-
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
 
     .cart-item {
-        height: 24rem;
-        display: flex;
-        flex-direction: column;
-        overflow: scroll;
+        height: 8rem;
     }
 
     button {
